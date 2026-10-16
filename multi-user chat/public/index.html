@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="chat">
+      <section class="content">
+        <header>
+          <h1>Чат</h1>
+          <span id="status">Подключение...</span>
+        </header>
+        <div id="messages" class="messages"></div>
+        <form id="message-form" class="message-form">
+          <select id="recipient" disabled>
+            <option value="">Всем</option>
+          </select>
+          <input id="message-input" type="text" maxlength="500" placeholder="Введите сообщение" autocomplete="off" disabled>
+          <button type="submit" disabled>Отправить</button>
+        </form>
+      </section>
+      <aside>
+        <h2>В чате</h2>
+        <ul id="users"></ul>
+      </aside>
+    </main>
+
+    <dialog id="join-dialog" open>
+      <form id="join-form">
+        <h2>Представьтесь</h2>
+        <label>Имя<input id="name-input" type="text" maxlength="20" required autocomplete="name"></label>
+        <label>Ваш цвет<input id="color-input" type="color" value="#2563eb"></label>
+        <button type="submit">Войти в чат</button>
+      </form>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
+</html>

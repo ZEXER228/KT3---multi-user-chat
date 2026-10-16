@@ -1,0 +1,28 @@
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f1f5f9; color: #1e293b; font-family: Arial, sans-serif; }
+.chat { width: min(900px, calc(100% - 32px)); min-height: 560px; display: grid; grid-template-columns: 1fr 210px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 35px #94a3b866; }
+.content { display: flex; flex-direction: column; min-width: 0; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; border-bottom: 1px solid #e2e8f0; }
+h1, h2 { margin: 0; }
+h1 { font-size: 22px; }
+h2 { font-size: 16px; }
+#status { color: #64748b; font-size: 14px; }
+.messages { flex: 1; padding: 20px 24px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+.message { max-width: 80%; padding: 10px 13px; border-radius: 10px; background: #f1f5f9; overflow-wrap: anywhere; }
+.message strong { display: block; margin-bottom: 4px; }
+.private { background: #fef3c7; }
+.system { align-self: center; color: #64748b; font-size: 13px; text-align: center; }
+.message-form { display: grid; grid-template-columns: 120px 1fr auto; gap: 8px; padding: 16px 24px; border-top: 1px solid #e2e8f0; }
+input, select, button { border: 1px solid #cbd5e1; border-radius: 7px; padding: 10px; font: inherit; }
+button { color: #fff; background: #2563eb; border-color: #2563eb; cursor: pointer; }
+button:disabled, input:disabled, select:disabled { opacity: .55; cursor: not-allowed; }
+aside { padding: 20px; background: #f8fafc; border-left: 1px solid #e2e8f0; }
+ul { padding: 0; margin: 14px 0; list-style: none; }
+li { margin: 9px 0; display: flex; align-items: center; gap: 8px; overflow-wrap: anywhere; }
+.dot { width: 10px; height: 10px; border-radius: 50%; flex: 0 0 auto; }
+dialog { border: 0; border-radius: 12px; padding: 0; box-shadow: 0 15px 50px #0f172a55; }
+dialog::backdrop { background: #0f172a88; }
+#join-form { display: grid; gap: 14px; padding: 24px; min-width: 290px; }
+label { display: grid; gap: 6px; font-size: 14px; }
+input[type="color"] { height: 42px; padding: 4px; width: 100%; }
+@media (max-width: 650px) { .chat { grid-template-columns: 1fr; min-height: 100vh; width: 100%; border-radius: 0; } aside { border: 0; border-top: 1px solid #e2e8f0; } .message-form { grid-template-columns: 1fr auto; } .message-form select { grid-column: 1 / -1; } }
